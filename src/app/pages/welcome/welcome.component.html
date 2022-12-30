@@ -1,0 +1,51 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <img
+            src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+            mat-card-avatar
+        />
+        <mat-card-title>Softtek</mat-card-title>
+        <mat-card-subtitle>Angular training</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image style="width: 150px" src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg">
+    <mat-card-content>
+       <p>
+        {{longText}}
+       </p> 
+    </mat-card-content>
+</mat-card>
+<ng-container  *ngIf="my_data && my_data.length > 0">
+    <mat-card>
+        <table mat-table [dataSource]="my_data"  class="mat-elevation-z8">
+            <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="Age">
+            <th mat-header-cell *matHeaderCellDef> Age </th>
+            <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="IS">
+            <th mat-header-cell *matHeaderCellDef> IS </th>
+            <td mat-cell *matCellDef="let element"> {{element.IS}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="City">
+            <th mat-header-cell *matHeaderCellDef> City </th>
+            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="State">
+                <th mat-header-cell *matHeaderCellDef> State </th>
+                <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+        
+    </mat-card>
+</ng-container>

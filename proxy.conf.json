@@ -1,0 +1,11 @@
+{  
+    "/crud/*" : {
+
+        "target": "https://crudcrud.com/api",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {"^/crud/" : ""}
+
+    }
+
+}

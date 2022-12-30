@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+    <h2 class="title m-0" fxFlex="auto">{{crud?.name || 'Create Crud'}}</h2>
+    <!--
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+        <mat-icon>close</mat-icon>
+    </button>
+    -->
+</div>
+<mat-divider class="mx-6 text-border"></mat-divider>
+<mat-dialog-content class="my-6 mb" fxLayout="column">
+    <form class="example-container example-form form" #ngForm="ngForm">
+        <app-input-data-component [ph]="'Nombre'" [typeInput]="'text'" [val]="crud?.name"
+        (inputData)="getData($event)"></app-input-data-component>
+
+        <app-input-data-component [ph]="'Color'" [typeInput]="'text'" [val]="crud?.colour"
+        (inputData)="getColor($event)"></app-input-data-component>
+
+        <app-input-data-component [ph]="'Edad'" [typeInput]="'text'" [val]="crud?.age"
+        (inputData)="getEdad($event)"></app-input-data-component>
+
+        <button color="primary" class="btn" mat-button type="button" (click)="save()" [disabled]="ngForm.invalid">GUARDAR</button>
+    </form>
+</mat-dialog-content>
+<mat-divider class="mx-6 text-border"></mat-divider>
+<!--
+<mat-dialog-action align="end">
+    <button cdkFocusInitial color="warn" mat-button mat-dialog-close type="button">CERRAR</button>
+</mat-dialog-action>
+-->
